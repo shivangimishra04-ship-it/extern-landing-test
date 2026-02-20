@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Extern — Free Externships for Community College Students</title>
+<title>Extern — Experience Your Future Career</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
@@ -34,173 +34,205 @@
 
   h1, h2, h3, .label { font-family: 'Sora', sans-serif; }
 
+  /* NAV */
   nav {
     position: sticky; top: 0; z-index: 100;
     background: rgba(249,249,247,0.94);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
-    padding: 14px 20px;
+    padding: 14px 24px;
     display: flex; align-items: center; justify-content: space-between;
   }
   .logo {
+    font-family: 'Sora', sans-serif;
     font-weight: 800; font-size: 1.2rem;
     color: var(--text); text-decoration: none;
     letter-spacing: -0.5px;
   }
   .logo span { color: var(--accent); }
-
+  .nav-links {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-signin {
+    font-family: 'Sora', sans-serif;
+    font-weight: 600; font-size: 0.9rem;
+    color: var(--muted); text-decoration: none;
+    padding: 9px 18px; border-radius: 50px;
+    transition: color 0.18s, background 0.18s;
+  }
+  .nav-signin:hover { color: var(--text); background: var(--border); }
   .btn {
     display: inline-block;
     background: var(--accent); color: #fff;
     font-family: 'Sora', sans-serif; font-weight: 700;
-    font-size: 1rem; text-decoration: none;
-    padding: 14px 28px; border-radius: 50px;
+    font-size: 0.95rem; text-decoration: none;
+    padding: 10px 22px; border-radius: 50px;
     border: none; cursor: pointer;
     transition: background 0.18s, transform 0.15s;
     box-shadow: 0 4px 18px rgba(232,68,10,0.28);
   }
   .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
-  .btn-sm { padding: 10px 20px; font-size: 0.875rem; box-shadow: none; }
-  .btn-outline {
-    background: transparent; color: var(--text);
-    border: 1.5px solid var(--border);
-    box-shadow: none;
+  .btn-lg {
+    font-size: 1.05rem;
+    padding: 15px 34px;
+    box-shadow: 0 6px 24px rgba(232,68,10,0.32);
   }
-  .btn-outline:hover { border-color: var(--accent); background: var(--accent-light); }
 
   .container { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
-  section { padding: 64px 20px; }
+  section { padding: 80px 20px; }
 
   .label {
-    font-size: 0.75rem; font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.1em;
+    font-size: 0.72rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.12em;
     color: var(--accent); margin-bottom: 10px;
   }
   .section-title {
-    font-size: clamp(1.6rem, 4vw, 2.3rem);
-    font-weight: 800; letter-spacing: -0.6px;
-    line-height: 1.18; margin-bottom: 12px;
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 800; letter-spacing: -0.7px;
+    line-height: 1.18; margin-bottom: 14px;
   }
   .section-sub {
     color: var(--muted); font-size: 0.97rem;
-    max-width: 520px; line-height: 1.65;
+    max-width: 520px; line-height: 1.7;
   }
 
   /* HERO */
   .hero {
-    padding: 72px 20px 64px;
+    padding: 120px 20px 110px;
     text-align: center;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
     position: relative; overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(249,249,247,0.88) 0%,
+        rgba(249,249,247,0.93) 55%,
+        rgba(249,249,247,0.98) 100%
+      ),
+      url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&q=80&auto=format&fit=crop") center/cover no-repeat;
   }
-  .hero::before {
-    content: '';
-    position: absolute; top: 0; left: 50%;
-    transform: translateX(-50%);
-    width: 800px; height: 300px;
-    background: radial-gradient(ellipse at 50% 0%, rgba(232,68,10,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 6px;
-    background: var(--accent-light); color: var(--accent);
-    font-weight: 700;
-    font-size: 0.78rem; letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 6px 14px; border-radius: 50px;
-    margin-bottom: 22px;
-  }
+  .hero .container { position: relative; z-index: 1; }
   .hero h1 {
-    font-size: clamp(2rem, 5.5vw, 3.4rem);
-    font-weight: 800; letter-spacing: -1.2px;
-    max-width: 720px; margin: 0 auto 14px;
-    line-height: 1.12;
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 800; letter-spacing: -1.5px;
+    max-width: 740px; margin: 0 auto 20px;
+    line-height: 1.1;
+    color: var(--text);
   }
   .hero h1 em { font-style: normal; color: var(--accent); }
   .hero-sub {
     font-size: 1.05rem; color: var(--muted);
-    max-width: 520px; margin: 0 auto 24px;
-    line-height: 1.65;
+    max-width: 500px; margin: 0 auto 48px;
+    line-height: 1.72;
   }
-  .hero-ctas {
-    display: flex; flex-direction: column;
-    align-items: center; gap: 10px;
-    margin-bottom: 20px;
-  }
-  @media (min-width: 480px) {
-    .hero-ctas { flex-direction: row; justify-content: center; }
-  }
+  .hero-sub strong { color: var(--text); font-weight: 500; }
   .hero-micro {
-    font-size: 0.82rem; color: var(--muted);
-    margin-top: 8px;
+    font-size: 0.8rem; color: #999;
+    margin-top: 16px;
   }
 
   /* EMAIL CAPTURE */
   .email-capture {
     margin: 0 auto;
-    max-width: 480px;
+    max-width: 460px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
   @media (min-width: 480px) {
     .email-capture { flex-direction: row; }
   }
   .email-capture input {
     flex: 1;
-    padding: 13px 16px;
+    padding: 13px 18px;
     border-radius: 50px;
-    border: 1.5px solid var(--border);
-    background: var(--bg);
+    border: 1px solid #D8D7D2;
+    background: rgba(255,255,255,0.95);
     font-family: 'DM Sans', sans-serif;
     font-size: 0.95rem;
     color: var(--text);
     outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
   }
-  .email-capture input::placeholder { color: #AEADA6; }
+  .email-capture input::placeholder { color: #B8B7B1; }
   .email-capture input:focus {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(232,68,10,0.1);
+    box-shadow: 0 0 0 3px rgba(232,68,10,0.08);
   }
   .email-capture .btn {
     white-space: nowrap;
-    padding: 13px 22px;
+    padding: 13px 24px;
+    font-size: 0.97rem;
+    box-shadow: 0 2px 12px rgba(232,68,10,0.22);
   }
   .capture-micro {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 8px;
+    font-size: 0.77rem;
+    color: #AAA;
+    margin-top: 12px;
     text-align: center;
   }
 
-  /* TRUST */
+  /* TRUST / MARQUEE */
   .trust {
-    background: var(--bg);
+    background: var(--white);
     border-bottom: 1px solid var(--border);
-    padding: 28px 20px;
-    text-align: center;
+    padding: 30px 0;
+    overflow: hidden;
   }
   .trust-label {
-    font-size: 0.75rem; font-weight: 600;
-    text-transform: uppercase; letter-spacing: 0.08em;
-    color: var(--muted); margin-bottom: 14px;
+    font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--muted); margin-bottom: 20px;
+    text-align: center;
+    padding: 0 20px;
   }
-  .trust-names {
-    display: flex; flex-wrap: wrap;
-    justify-content: center; align-items: center;
-    gap: 6px 20px;
+  .trust-track-wrap {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
   }
-  .trust-name {
-    font-family: 'Sora', sans-serif;
-    font-weight: 700; font-size: 0.92rem;
-    color: #AEADA6;
-    letter-spacing: -0.2px;
+  .trust-track-wrap::before,
+  .trust-track-wrap::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0;
+    width: 80px; z-index: 2;
+    pointer-events: none;
   }
+  .trust-track-wrap::before {
+    left: 0;
+    background: linear-gradient(to right, var(--white), transparent);
+  }
+  .trust-track-wrap::after {
+    right: 0;
+    background: linear-gradient(to left, var(--white), transparent);
+  }
+  .trust-track {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+    animation: marquee 28s linear infinite;
+    width: max-content;
+    padding: 4px 0;
+  }
+  .trust-track:hover { animation-play-state: paused; }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .trust-logo {
+    display: flex; align-items: center;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    flex-shrink: 0;
+    height: 28px;
+  }
+  .trust-logo:hover { opacity: 1; }
+  .trust-logo svg, .trust-logo img { height: 100%; width: auto; display: block; }
   .trust-stat {
-    margin-top: 12px;
+    margin-top: 22px;
     font-size: 0.875rem; color: var(--muted);
+    text-align: center;
+    padding: 0 20px;
   }
   .trust-stat strong {
     font-family: 'Sora', sans-serif;
@@ -208,10 +240,15 @@
   }
 
   /* HOW IT WORKS */
+  .how-section {
+    background: #F4F3F0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
   .steps-wrap {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px; margin-top: 40px;
+    gap: 20px; margin-top: 48px;
   }
   @media (min-width: 640px) {
     .steps-wrap { grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
@@ -220,51 +257,73 @@
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 26px 22px;
+    padding: 30px 26px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .step-num {
-    width: 40px; height: 40px;
+  .step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.08);
+  }
+  .step-icon {
+    width: 44px; height: 44px;
     background: var(--accent-light);
-    border-radius: 50%;
+    border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800;
-    font-size: 1rem; color: var(--accent);
-    margin-bottom: 14px;
+    font-size: 1.25rem;
+    margin-bottom: 18px;
   }
   .step h3 {
-    font-size: 1rem; font-weight: 700;
-    margin-bottom: 8px; line-height: 1.3;
+    font-size: 1.05rem; font-weight: 700;
+    margin-bottom: 10px; line-height: 1.3;
+    color: var(--text);
   }
-  .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.6; }
+  .step p { font-size: 0.9rem; color: var(--muted); line-height: 1.65; }
 
   /* CATALOG */
-  .catalog-section { background: var(--text); }
+  .catalog-section {
+    position: relative;
+    overflow: hidden;
+    background:
+      linear-gradient(rgba(15,15,14,0.90) 0%, rgba(15,15,14,0.95) 100%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3CradialGradient id='b' cx='30%25' cy='60%25' r='55%25'%3E%3Cstop offset='0%25' stop-color='%23E8440A' stop-opacity='.12'/%3E%3Cstop offset='100%25' stop-color='%230F0F0E' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='url(%23b)'/%3E%3Ccircle cx='800' cy='80' r='200' fill='%23E8440A' fill-opacity='.06'/%3E%3C/svg%3E") center/cover no-repeat;
+  }
   .catalog-section .section-title { color: var(--white); }
   .catalog-section .section-sub { color: rgba(255,255,255,0.55); }
   .catalog-section .label { color: #FF8A6E; }
+  .catalog-disclaimer {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.35);
+    margin-top: 8px;
+    font-style: italic;
+    max-width: 520px;
+  }
   .cards-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 14px; margin-top: 34px;
+    gap: 14px; margin-top: 36px;
   }
   @media (min-width: 540px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
   .card {
     background: rgba(255,255,255,0.07);
     border: 1px solid rgba(255,255,255,0.1);
     border-radius: var(--radius);
-    padding: 22px 20px;
+    padding: 24px 22px;
     display: flex; flex-direction: column; gap: 10px;
-    transition: background 0.18s;
+    transition: background 0.18s, transform 0.18s;
   }
-  .card:hover { background: rgba(255,255,255,0.11); }
+  .card:hover {
+    background: rgba(255,255,255,0.11);
+    transform: translateY(-2px);
+  }
   .card-head {
     display: flex; align-items: center;
     justify-content: space-between;
   }
-  .card-emoji { font-size: 1.6rem; }
+  .card-emoji { font-size: 1.5rem; }
   .card-pill {
     font-family: 'Sora', sans-serif; font-weight: 700;
-    font-size: 0.7rem; text-transform: uppercase;
+    font-size: 0.68rem; text-transform: uppercase;
     letter-spacing: 0.04em;
     background: rgba(232,68,10,0.25);
     color: #FF9E85;
@@ -272,40 +331,41 @@
   }
   .card-title {
     font-family: 'Sora', sans-serif;
-    font-weight: 700; font-size: 0.97rem;
+    font-weight: 700; font-size: 1rem;
     color: var(--white); line-height: 1.3;
   }
   .card-desc {
     font-size: 0.875rem;
-    color: rgba(255,255,255,0.55);
-    line-height: 1.55;
+    color: rgba(255,255,255,0.52);
+    line-height: 1.6;
   }
   .card-meta {
     display: flex; gap: 12px; flex-wrap: wrap;
-    padding-top: 10px;
+    padding-top: 12px;
     border-top: 1px solid rgba(255,255,255,0.08);
     font-size: 0.78rem;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.38);
   }
-  .catalog-cta { text-align: center; margin-top: 32px; }
+  .catalog-cta { text-align: center; margin-top: 40px; }
 
   /* TESTIMONIALS */
   .testi-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 16px; margin-top: 38px;
+    gap: 16px; margin-top: 44px;
   }
   @media (min-width: 640px) { .testi-grid { grid-template-columns: 1fr 1fr; } }
   .testi-card {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 24px 20px;
+    padding: 26px 22px;
     display: flex; flex-direction: column; gap: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   }
   .stars { color: #F59E0B; font-size: 0.85rem; letter-spacing: 2px; }
   .testi-quote {
-    font-size: 0.95rem; line-height: 1.7;
+    font-size: 0.97rem; line-height: 1.75;
     color: var(--text); font-style: italic;
     flex-grow: 1;
   }
@@ -315,18 +375,18 @@
     border-top: 1px solid var(--border);
   }
   .avatar {
-    width: 38px; height: 38px; border-radius: 50%;
+    width: 40px; height: 40px; border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-weight: 800;
+    font-family: 'Sora', sans-serif; font-weight: 800;
     font-size: 0.85rem; color: #fff; flex-shrink: 0;
   }
-  .testi-name { font-weight: 700; font-size: 0.88rem; }
+  .testi-name { font-family: 'Sora', sans-serif; font-weight: 700; font-size: 0.88rem; }
   .testi-role { font-size: 0.78rem; color: var(--muted); }
 
   /* FAQ */
   .faq-section { background: var(--white); }
   .faq-list {
-    max-width: 620px; margin: 40px auto 0;
+    max-width: 620px; margin: 44px auto 0;
     display: flex; flex-direction: column; gap: 10px;
   }
   .faq-item {
@@ -336,10 +396,10 @@
   }
   .faq-btn {
     width: 100%; background: none; border: none;
-    padding: 18px 20px;
+    padding: 18px 22px;
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
     text-align: left;
-    font-weight: 600;
+    font-family: 'Sora', sans-serif; font-weight: 600;
     font-size: 0.94rem; color: var(--text);
     cursor: pointer;
     transition: background 0.15s;
@@ -359,69 +419,61 @@
   }
   .faq-body {
     max-height: 0; overflow: hidden;
-    font-size: 0.91rem; color: var(--muted); line-height: 1.7;
-    padding: 0 20px;
+    font-size: 0.91rem; color: var(--muted); line-height: 1.75;
+    padding: 0 22px;
     transition: max-height 0.32s ease, padding 0.22s;
   }
-  .faq-item.open .faq-body { max-height: 220px; padding: 0 20px 18px; }
+  .faq-item.open .faq-body { max-height: 240px; padding: 0 22px 20px; }
 
   /* FINAL CTA */
   .final {
     background: var(--accent);
     text-align: center;
-    padding: 78px 20px;
+    padding: 90px 20px;
     position: relative; overflow: hidden;
   }
   .final::before {
     content: '';
     position: absolute; top: -80px; left: 50%;
     transform: translateX(-50%);
-    width: 600px; height: 300px;
-    background: radial-gradient(ellipse, rgba(255,255,255,0.1) 0%, transparent 70%);
+    width: 600px; height: 360px;
+    background: radial-gradient(ellipse, rgba(255,255,255,0.12) 0%, transparent 70%);
     pointer-events: none;
   }
   .final h2 {
-    font-size: clamp(1.7rem, 4.5vw, 2.7rem);
+    font-size: clamp(1.8rem, 4.5vw, 2.8rem);
     font-weight: 800; letter-spacing: -0.8px;
-    color: #fff; margin-bottom: 12px; line-height: 1.15;
+    color: #fff; margin-bottom: 14px; line-height: 1.15;
+    position: relative;
   }
-  .final p { color: rgba(255,255,255,0.78); margin-bottom: 26px; font-size: 1rem; }
-  .final .btn {
+  .final p {
+    color: rgba(255,255,255,0.78);
+    margin-bottom: 30px; font-size: 1.02rem;
+    position: relative;
+  }
+  .final .btn-light {
+    display: inline-block;
     background: #fff; color: var(--accent);
-    box-shadow: 0 6px 24px rgba(0,0,0,0.18);
-    font-size: 1.05rem; padding: 16px 36px;
+    font-family: 'Sora', sans-serif; font-weight: 700;
+    font-size: 1.05rem; text-decoration: none;
+    padding: 16px 38px; border-radius: 50px;
+    border: none; cursor: pointer;
+    box-shadow: 0 6px 28px rgba(0,0,0,0.18);
+    transition: background 0.18s, transform 0.15s;
+    position: relative;
   }
-  .final .btn:hover { background: #f0f0ee; }
-  .final .micro { font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-top: 12px; }
-
-  /* STICKY MOBILE CTA */
-  .sticky {
-    display: none;
-    position: fixed; bottom: 0; left: 0; right: 0;
-    background: var(--white);
-    border-top: 1px solid var(--border);
-    padding: 12px 16px;
-    z-index: 200;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-  }
-  .sticky a {
-    display: block; width: 100%;
-    text-align: center;
-    background: var(--accent); color: #fff;
-    font-weight: 700;
-    font-size: 1rem; padding: 14px;
-    border-radius: 50px; text-decoration: none;
-    box-shadow: 0 4px 16px rgba(232,68,10,0.3);
-  }
-  @media (max-width: 640px) {
-    .sticky { display: block; }
-    body { padding-bottom: 72px; }
+  .final .btn-light:hover { background: #f5f4f1; transform: translateY(-1px); }
+  .final .micro {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.55);
+    margin-top: 14px;
+    position: relative;
   }
 
   /* FOOTER */
   footer {
     border-top: 1px solid var(--border);
-    padding: 24px 20px;
+    padding: 26px 20px;
     text-align: center;
     font-size: 0.8rem; color: var(--muted);
   }
@@ -433,141 +485,219 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="logo">extern<span>.</span></a>
-  <a href="#browse" class="btn btn-sm">Start free</a>
+  <div class="nav-links">
+    <a href="#" class="nav-signin">Sign in</a>
+    <a href="#get-started" class="btn">Sign up</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-badge">🎓 Free for participating community colleges</div>
-    <h1>Try a real career project in <em>2 weeks</em>. Free.</h1>
-    <p class="hero-sub">Pick a field you're curious about. Do 5 to 10 hours of real work, remote and on your own schedule. Walk away with a project, a certificate, and a clearer sense of direction.</p>
+    <h1>Experience your future career <em>before</em> committing to it.</h1>
+    <p class="hero-sub">
+      Choose a field you're curious about. Do <strong>5 to 10 hours</strong> of real, guided work, <strong>remote</strong> and on your schedule, and finish with a project you can actually show. <strong>Beginner-friendly.</strong> No experience required.
+    </p>
 
-    <div class="hero-ctas">
-      <a href="#browse" class="btn">Start free</a>
-      <a href="#how" class="btn btn-outline">See how it works</a>
-    </div>
-
-    <form class="email-capture" onsubmit="handleCapture(event)">
-      <input type="email" required placeholder="Your school email address" aria-label="Email address">
-      <button class="btn" type="submit">Get started</button>
+    <form id="get-started" class="email-capture" onsubmit="handleCapture(event)">
+      <input type="email" required placeholder="Your email address" aria-label="Email address">
+      <button class="btn" type="submit">Get Started</button>
     </form>
-    <p class="capture-micro">No spam. Just your externship options. Free for your school.</p>
-
+    <p class="capture-micro">No spam. Just your externship options.</p>
     <p class="hero-micro">Takes 2 minutes to sign up. No experience needed.</p>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
+<!-- TRUST / LOGO MARQUEE -->
 <div class="trust">
-  <div class="container">
-    <div class="trust-label">Companies that have hosted Extern students</div>
-    <div class="trust-names">
-      <span class="trust-name">Amazon</span>
-      <span class="trust-name">Canva</span>
-      <span class="trust-name">Pfizer</span>
-      <span class="trust-name">TikTok</span>
-      <span class="trust-name">PwC</span>
-      <span class="trust-name">Home Depot</span>
+  <div class="trust-label">Companies that have hosted Extern students</div>
+  <div class="trust-track-wrap">
+    <div class="trust-track" id="trustTrack">
+
+      <!-- TikTok -->
+      <div class="trust-logo">
+        <svg viewBox="0 0 50 56" fill="none" xmlns="http://www.w3.org/2000/svg" height="28">
+          <path d="M36.4 0h-8.7v38.2c0 4-3.3 7.3-7.3 7.3s-7.3-3.3-7.3-7.3 3.2-7.3 7.1-7.3c.7 0 1.4.1 2 .3V22.4c-.7-.1-1.3-.1-2-.1C9 22.3 1.1 30.3 1.1 40.2S9 58 19.1 58s18-8 18-17.8V18.8c3.3 2.3 7.3 3.7 11.6 3.7V13.8C41.8 13.8 36.4 7.5 36.4 0z" fill="#0F0F0E"/>
+        </svg>
+      </div>
+
+      <!-- Amazon wordmark -->
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 38" height="22">
+          <path d="M78.3 28.8c-7.3 5.4-17.9 8.2-27 8.2-12.8 0-24.3-4.7-33-12.5-.7-.6-.1-1.4.8-.9 9.4 5.5 21 8.7 33 8.7 8.1 0 17-1.7 25.2-5.2 1.2-.5 2.3.8 1 1.7z" fill="#FF9900"/>
+          <path d="M81.5 25.1c-.9-1.2-6.1-.6-8.4-.3-.7.1-.8-.5-.2-1 4.1-2.9 10.9-2 11.7-1.1.8.9-.2 7.8-4.1 11-.6.5-1.2.2-.9-.4.9-2.2 2.8-7 1.9-8.2z" fill="#FF9900"/>
+          <text y="24" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#0F0F0E" x="0">amazon</text>
+        </svg>
+      </div>
+
+      <!-- Canva wordmark -->
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" height="22">
+          <text y="24" font-family="Arial, sans-serif" font-weight="800" font-size="26" fill="#7D2AE7" x="0">Canva</text>
+        </svg>
+      </div>
+
+      <!-- Pfizer wordmark -->
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 30" height="20">
+          <text y="23" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#0093C8" x="0">Pfizer</text>
+        </svg>
+      </div>
+
+      <!-- PwC wordmark -->
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" height="22">
+          <text y="24" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#D04A02" x="0">PwC</text>
+        </svg>
+      </div>
+
+      <!-- Home Depot wordmark -->
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 30" height="22">
+          <text y="23" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#F96302" x="0">The Home Depot</text>
+        </svg>
+      </div>
+
+      <!-- Duplicates for seamless loop -->
+
+      <div class="trust-logo">
+        <svg viewBox="0 0 50 56" fill="none" xmlns="http://www.w3.org/2000/svg" height="28">
+          <path d="M36.4 0h-8.7v38.2c0 4-3.3 7.3-7.3 7.3s-7.3-3.3-7.3-7.3 3.2-7.3 7.1-7.3c.7 0 1.4.1 2 .3V22.4c-.7-.1-1.3-.1-2-.1C9 22.3 1.1 30.3 1.1 40.2S9 58 19.1 58s18-8 18-17.8V18.8c3.3 2.3 7.3 3.7 11.6 3.7V13.8C41.8 13.8 36.4 7.5 36.4 0z" fill="#0F0F0E"/>
+        </svg>
+      </div>
+
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 126 38" height="22">
+          <path d="M78.3 28.8c-7.3 5.4-17.9 8.2-27 8.2-12.8 0-24.3-4.7-33-12.5-.7-.6-.1-1.4.8-.9 9.4 5.5 21 8.7 33 8.7 8.1 0 17-1.7 25.2-5.2 1.2-.5 2.3.8 1 1.7z" fill="#FF9900"/>
+          <path d="M81.5 25.1c-.9-1.2-6.1-.6-8.4-.3-.7.1-.8-.5-.2-1 4.1-2.9 10.9-2 11.7-1.1.8.9-.2 7.8-4.1 11-.6.5-1.2.2-.9-.4.9-2.2 2.8-7 1.9-8.2z" fill="#FF9900"/>
+          <text y="24" font-family="Arial, sans-serif" font-weight="bold" font-size="22" fill="#0F0F0E" x="0">amazon</text>
+        </svg>
+      </div>
+
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 30" height="22">
+          <text y="24" font-family="Arial, sans-serif" font-weight="800" font-size="26" fill="#7D2AE7" x="0">Canva</text>
+        </svg>
+      </div>
+
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 30" height="20">
+          <text y="23" font-family="Arial, sans-serif" font-weight="700" font-size="22" fill="#0093C8" x="0">Pfizer</text>
+        </svg>
+      </div>
+
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" height="22">
+          <text y="24" font-family="Arial, sans-serif" font-weight="800" font-size="24" fill="#D04A02" x="0">PwC</text>
+        </svg>
+      </div>
+
+      <div class="trust-logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 30" height="22">
+          <text y="23" font-family="Arial, sans-serif" font-weight="700" font-size="20" fill="#F96302" x="0">The Home Depot</text>
+        </svg>
+      </div>
+
     </div>
-    <p class="trust-stat"><strong>70,000+</strong> externship experiences supported worldwide</p>
   </div>
+  <p class="trust-stat"><strong>70,000+</strong> externship experiences supported worldwide</p>
 </div>
 
 <!-- HOW IT WORKS -->
-<section id="how">
+<section id="how" class="how-section">
   <div class="container">
-    <div class="label">Simple process</div>
-    <h2 class="section-title">Three steps. Two weeks.</h2>
-    <p class="section-sub">No commute. No set meeting times. Just guided work you fit around your life.</p>
+    <div class="label">The process</div>
+    <h2 class="section-title">From curious to confident in 14 days.</h2>
+    <p class="section-sub">Built for students who are working, studying, and figuring things out at the same time. No commute. No rigid schedule. Just real work that moves you forward.</p>
     <div class="steps-wrap">
       <div class="step">
-        <div class="step-num">1</div>
-        <h3>Pick a career to explore</h3>
-        <p>Browse externships by field. Choose one that sounds interesting. You don't need a plan. Curiosity is enough.</p>
+        <div class="step-icon">🎯</div>
+        <h3>Choose what to explore</h3>
+        <p>Pick a career area that genuinely interests you. Browse projects across product, data, design, marketing, and more. You don't need a plan. Curiosity is enough.</p>
       </div>
       <div class="step">
-        <div class="step-num">2</div>
-        <h3>Do the work on your schedule</h3>
-        <p>Follow guided tasks and resources. Work whenever you have an hour. No live sessions required.</p>
+        <div class="step-icon">⚡</div>
+        <h3>Do real work, your way</h3>
+        <p>Follow guided tasks and resources built for beginners. Work in whatever windows of time you have. No live sessions. No one monitoring your hours. Just you and the work.</p>
       </div>
       <div class="step">
-        <div class="step-num">3</div>
-        <h3>Finish with something real</h3>
-        <p>Submit your project. Receive a verified certificate you can add to LinkedIn. Keep the work you made.</p>
+        <div class="step-icon">🏆</div>
+        <h3>Leave with proof</h3>
+        <p>Submit your project and receive a verified completion certificate for LinkedIn. Keep everything you built. Walk away with real clarity about whether this path fits you.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BROWSE EXTERNSHIPS -->
+<!-- EXTERNSHIPS CATALOG -->
 <section id="browse" class="catalog-section">
   <div class="container">
-    <div class="label">Browse free externships</div>
-    <h2 class="section-title">Try one. See what fits.</h2>
-    <p class="section-sub">All free. All remote. All beginner-friendly. Pick what sounds interesting.</p>
+    <div class="label">Externship projects</div>
+    <h2 class="section-title">Real work. Real fields.</h2>
+    <p class="section-sub">Projects inspired by real-world roles at companies like Google, SpaceX, TikTok, and more. No direct employment implied.</p>
+    <p class="catalog-disclaimer">All projects are simulations designed to mirror real professional work. Extern does not guarantee placement or employment.</p>
 
     <div class="cards-grid">
       <div class="card">
         <div class="card-head">
-          <span class="card-emoji">📣</span>
+          <span class="card-emoji">🤖</span>
+          <span class="card-pill">Product</span>
+        </div>
+        <div class="card-title">AI Product Strategy Simulation</div>
+        <div class="card-desc">Define a product roadmap for an AI-powered feature. Write a brief, prioritize use cases, and pitch your reasoning like a PM at a tech company.</div>
+        <div class="card-meta">
+          <span>⏱ 8 to 10 hrs</span>
+          <span>🟢 Beginner</span>
+          <span>📝 Product brief</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-emoji">🚀</span>
+          <span class="card-pill">Engineering</span>
+        </div>
+        <div class="card-title">Aerospace Systems Exploration</div>
+        <div class="card-desc">Investigate how aerospace companies approach systems engineering. Analyze a real component challenge and produce a structured technical summary.</div>
+        <div class="card-meta">
+          <span>⏱ 8 to 10 hrs</span>
+          <span>🟢 Beginner</span>
+          <span>📄 Technical report</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <span class="card-emoji">📈</span>
           <span class="card-pill">Marketing</span>
         </div>
-        <div class="card-title">Social Media Strategy Sprint</div>
-        <div class="card-desc">Build a content calendar and audience strategy for a real brand. Leave with a portfolio piece you can show.</div>
+        <div class="card-title">Creator Growth Strategy Lab</div>
+        <div class="card-desc">Develop a creator acquisition and retention strategy for a social platform. Analyze data, identify trends, and build a pitch-ready growth plan.</div>
         <div class="card-meta">
           <span>⏱ 6 to 8 hrs</span>
           <span>🟢 Beginner</span>
-          <span>📄 Portfolio piece</span>
+          <span>📊 Growth strategy</span>
         </div>
       </div>
 
       <div class="card">
         <div class="card-head">
-          <span class="card-emoji">📊</span>
-          <span class="card-pill">Data</span>
+          <span class="card-emoji">🛒</span>
+          <span class="card-pill">Operations</span>
         </div>
-        <div class="card-title">Data Analyst Starter Project</div>
-        <div class="card-desc">Clean a dataset, build a dashboard in Google Sheets, and present a key insight. No coding required.</div>
+        <div class="card-title">E-Commerce Customer Experience Sprint</div>
+        <div class="card-desc">Audit a customer journey from first click to delivery. Identify friction points and propose concrete improvements backed by data.</div>
         <div class="card-meta">
-          <span>⏱ 8 to 10 hrs</span>
+          <span>⏱ 6 to 8 hrs</span>
           <span>🟢 Beginner</span>
-          <span>📈 Working dashboard</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-head">
-          <span class="card-emoji">🎨</span>
-          <span class="card-pill">UX Design</span>
-        </div>
-        <div class="card-title">UX Research and Wireframe</div>
-        <div class="card-desc">Talk to real users, identify a problem, and design a solution in Figma. Learn if design is the right fit for you.</div>
-        <div class="card-meta">
-          <span>⏱ 8 to 10 hrs</span>
-          <span>🟢 Beginner</span>
-          <span>🧩 Figma wireframe</span>
-        </div>
-      </div>
-
-      <div class="card">
-        <div class="card-head">
-          <span class="card-emoji">📦</span>
-          <span class="card-pill">Product</span>
-        </div>
-        <div class="card-title">Product Manager Sprint</div>
-        <div class="card-desc">Map out a feature from scratch, write a spec, and pitch it. See how product managers think at real companies.</div>
-        <div class="card-meta">
-          <span>⏱ 8 to 10 hrs</span>
-          <span>🟢 Beginner</span>
-          <span>📝 Product spec</span>
+          <span>🗂 CX audit</span>
         </div>
       </div>
     </div>
 
     <div class="catalog-cta">
-      <a href="#" class="btn" style="font-size:0.97rem; padding:14px 30px;">Start free — browse all externships</a>
-      <p style="font-size:0.8rem; color:rgba(255,255,255,0.45); margin-top:10px;">Free for participating community colleges. No experience needed.</p>
+      <a href="#get-started" class="btn btn-lg" style="background:#fff; color:var(--accent); box-shadow:0 6px 24px rgba(0,0,0,0.2);">Get Started</a>
+      <p style="font-size:0.8rem; color:rgba(255,255,255,0.38); margin-top:12px;">Remote. Beginner-friendly. No experience required.</p>
     </div>
   </div>
 </section>
@@ -617,7 +747,7 @@
           Is this actually free? No credit card?
           <span class="faq-icon">▾</span>
         </button>
-        <div class="faq-body">Yes. Your school is part of a pilot program with Extern that covers the cost. No credit card, no trial period, no hidden fees. Free for participating community colleges.</div>
+        <div class="faq-body">Yes. Extern partners with schools and organizations to make externships accessible at no cost to students. No credit card, no trial period, no hidden fees. Sign up to see what's available for you.</div>
       </div>
 
       <div class="faq-item">
@@ -625,7 +755,7 @@
           I work full time. Can I realistically finish this?
           <span class="faq-icon">▾</span>
         </button>
-        <div class="faq-body">That's exactly who this is built for. Five to ten hours over two weeks works out to less than an hour a day, or a few focused sessions on the weekend. No live meetings, no one checking your schedule.</div>
+        <div class="faq-body">That's exactly who this is built for. Five to ten hours over two weeks means less than an hour a day, or a few focused sessions on the weekend. No live meetings. No one checking your calendar.</div>
       </div>
 
       <div class="faq-item">
@@ -633,7 +763,7 @@
           Do I need experience or specific skills?
           <span class="faq-icon">▾</span>
         </button>
-        <div class="faq-body">No. Every externship is designed for beginners. You're there to explore and learn, not to prove you already know something.</div>
+        <div class="faq-body">No. Every externship is designed for beginners. The point is to explore and learn, not to prove you already know something.</div>
       </div>
 
       <div class="faq-item">
@@ -641,7 +771,7 @@
           What do I get when I finish?
           <span class="faq-icon">▾</span>
         </button>
-        <div class="faq-body">A finished project you made and can show to employers. A verified digital certificate you can add to LinkedIn. And a clearer sense of whether that career path is actually right for you.</div>
+        <div class="faq-body">A finished project you can show to employers. A verified completion certificate for LinkedIn. And a much clearer sense of whether that career path is right for you.</div>
       </div>
 
     </div>
@@ -651,17 +781,12 @@
 <!-- FINAL CTA -->
 <section class="final">
   <div class="container">
-    <h2>5 to 10 hours. 2 weeks. One clearer direction.</h2>
-    <p>Free for participating community colleges. Remote. No experience needed.</p>
-    <a href="#browse" class="btn">Start free</a>
-    <p class="micro">Takes 2 minutes to sign up.</p>
+    <h2>Your next career starts with a project, not a degree.</h2>
+    <p>5 to 10 hours. 2 weeks. A real deliverable and a clearer direction.</p>
+    <a href="#get-started" class="btn-light">Get Started</a>
+    <p class="micro">Takes 2 minutes to sign up. No experience needed.</p>
   </div>
 </section>
-
-<!-- STICKY MOBILE CTA -->
-<div class="sticky" id="stickyCta">
-  <a href="#browse">Start free — takes 2 minutes</a>
-</div>
 
 <!-- FOOTER -->
 <footer>
@@ -680,23 +805,15 @@
     e.preventDefault();
     const input = e.target.querySelector('input');
     const btn = e.target.querySelector('button');
-    btn.textContent = 'Redirecting...';
+    const orig = btn.textContent;
+    btn.textContent = 'One moment...';
     btn.disabled = true;
     setTimeout(() => {
       document.getElementById('browse').scrollIntoView({ behavior: 'smooth' });
-      btn.textContent = 'Get started';
+      btn.textContent = orig;
       btn.disabled = false;
       input.value = '';
-    }, 600);
-  }
-
-  const sticky = document.getElementById('stickyCta');
-  const final = document.querySelector('.final');
-  if (sticky && final) {
-    const io = new IntersectionObserver(([e]) => {
-      sticky.style.display = e.isIntersecting ? 'none' : '';
-    }, { threshold: 0.1 });
-    io.observe(final);
+    }, 700);
   }
 </script>
 </body>
